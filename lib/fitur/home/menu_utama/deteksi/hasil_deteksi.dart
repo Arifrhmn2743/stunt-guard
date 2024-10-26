@@ -3,51 +3,27 @@ import 'package:lottie/lottie.dart';
 import 'package:stunting_app/fitur/home/homepage.dart';
 
 class HasilDeteksi extends StatefulWidget {
-  const HasilDeteksi({super.key});
+  final String nama, kategori;
+  const HasilDeteksi({super.key, required this.nama, required this.kategori});
 
   @override
   State<HasilDeteksi> createState() => _HasilDeteksiState();
 }
 
 class _HasilDeteksiState extends State<HasilDeteksi> {
-  bool isSelected = false;
-  bool enabled = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Hasil Deteksi"),
         centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Switch(
-                value: isSelected,
-                onChanged: enabled == true
-                    ? (bool value) {
-                        if (isSelected == false) {
-                          setState(() {
-                            print(isSelected);
-                            isSelected = value;
-                          });
-                        } else {
-                          setState(() {
-                            print(isSelected);
-                            isSelected = value;
-                          });
-                        }
-                      }
-                    : null),
-          )
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Center(
               child: SizedBox(
-                child: isSelected == false
+                child: widget.kategori != "Normal"
                     ? LottieBuilder.asset(
                         "assets/images/warning.json",
                         height: 300,
@@ -65,7 +41,7 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                 children: [
                   Center(
                     child: Text(
-                      isSelected == false
+                      widget.kategori != "Normal"
                           ? "Peringatan: Anak Terindikasi Stunting"
                           : "Anak Tidak Terindikasi Stunting",
                       style: TextStyle(fontSize: 20),
@@ -75,7 +51,7 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                     height: 30,
                   ),
                   Text(
-                    isSelected == false
+                    widget.kategori != "Normal"
                         ? "Berdasarkan hasil perhitungan, anak Anda terdeteksi memiliki kondisi stunting. Ini berarti pertumbuhan anak berada di bawah standar normal untuk usia dan tinggi badannya."
                         : "Berdasarkan hasil perhitungan, anak Anda tidak terdeteksi mengalami stunting. Pertumbuhan anak sesuai dengan standar normal untuk usia dan tinggi badannya.",
                     style: TextStyle(fontSize: 15),
@@ -105,7 +81,7 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                           SizedBox(
                             height: 12,
                           ),
-                          Text(isSelected == false
+                          Text(widget.kategori != "Normal"
                               ? "Konsultasikan segera dengan tenaga kesehatan atau dokter anak untuk mendapatkan penanganan lebih lanjut. "
                               : "Tetap pertahankan pola makan yang sehat dan bergizi untuk mendukung pertumbuhan anak secara optimal."),
                           SizedBox(
@@ -160,7 +136,7 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                           SizedBox(
                             height: 12,
                           ),
-                          Text(isSelected == false
+                          Text(widget.kategori != "Normal"
                               ? "Pastikan anak mendapatkan asupan gizi yang cukup dan seimbang. "
                               : "Rutin periksakan anak ke tenaga kesehatan untuk memantau perkembangan tinggi dan berat badan."),
                           SizedBox(
