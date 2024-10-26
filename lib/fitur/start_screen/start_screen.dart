@@ -107,30 +107,38 @@ class _StartScreenState extends State<StartScreen> {
                   SizedBox(
                     height: 50,
                   ),
-                  Text(
-                    "Aplikasi ini disusun oleh:",
-                    style: TextStyle(fontSize: 16),
+                  Center(
+                    child: Text(
+                      "Aplikasi ini disusun oleh:",
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    "Gita Wulandari",
-                    style: TextStyle(fontSize: 16),
+                  Center(
+                    child: Text(
+                      "Gita Wulandari",
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    "Dengan bimbingan:",
-                    style: TextStyle(fontSize: 16),
+                  Center(
+                    child: Text(
+                      "Dengan bimbingan:",
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    "Ns. Tina Muzaenah, S.Kep., M.Kep.",
-                    style: TextStyle(fontSize: 16),
+                  Center(
+                    child: Text(
+                      "Ns. Tina Muzaenah, S.Kep., M.Kep.",
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                   SizedBox(
                     height: 50,
@@ -143,9 +151,11 @@ class _StartScreenState extends State<StartScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
-                    "Universitas Muhammadiyah Purwokerto, Fakultas Ilmu Kesehatan",
-                    style: TextStyle(fontSize: 16),
+                  Center(
+                    child: Text(
+                      "Universitas Muhammadiyah Purwokerto, Fakultas Ilmu Kesehatan",
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                   const Spacer(),
                   Row(
