@@ -1,8 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:stunting_app/database/bbb_u_db.dart';
+import 'package:stunting_app/database/list_data/list_pb_u.dart';
+import 'package:stunting_app/database/pb_u_db.dart';
 import 'package:stunting_app/fitur/home/homepage.dart';
+import 'package:stunting_app/database/list_data/list_data_bb.dart';
 
-class StartScreen extends StatelessWidget {
+class StartScreen extends StatefulWidget {
   const StartScreen({super.key});
+
+  @override
+  State<StartScreen> createState() => _StartScreenState();
+}
+
+class _StartScreenState extends State<StartScreen> {
+  bool? pbExists, bbExist;
+  Future<void> insertBeratBadan() async {
+    final DatabaseBBUHelper databaseBBUHelper = DatabaseBBUHelper();
+    for (var data in beratBadanList) {
+      await databaseBBUHelper.insertBeratBadan(
+        data['umur'],
+        data['jenkel'],
+        data['sd_neg_3'],
+        data['sd_neg_2'],
+        data['sd_neg_1'],
+        data['median'],
+        data['sd_pos_1'],
+        data['sd_pos_2'],
+        data['sd_pos_3'],
+      );
+    }
+    List<Map<String, dynamic>> allData =
+        await databaseBBUHelper.getAllBeratBadan();
+    print("Data dalam tabel bbu:");
+    for (var row in allData) {
+      print(row);
+    }
+  }
+
+  Future<void> insertPanjangBadan() async {
+    final DatabasePBUHelper databasePBUHelper = DatabasePBUHelper();
+    for (var data in panjangBadanList) {
+      await databasePBUHelper.insertPanjangBadan(
+        data['umur'],
+        data['jenkel'],
+        data['sd_neg_3'],
+        data['sd_neg_2'],
+        data['sd_neg_1'],
+        data['median'],
+        data['sd_pos_1'],
+        data['sd_pos_2'],
+        data['sd_pos_3'],
+      );
+    }
+    List<Map<String, dynamic>> allData =
+        await databasePBUHelper.getAllPanjangBadan();
+    print("Data dalam tabel pbu:");
+    for (var row in allData) {
+      print(row);
+    }
+  }
+
+  void checkDbExsist() async {
+    final dbHelper1 = DatabaseBBUHelper();
+    final dbHelper2 = DatabasePBUHelper();
+    bbExist = await dbHelper1.checkBeratBadanExist(0);
+    pbExists = await dbHelper2.checkPanjangBadanExist(0);
+    print(bbExist);
+  }
+
+  @override
+  void initState() {
+    checkDbExsist();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,10 +160,19 @@ class StartScreen extends StatelessWidget {
                                     Theme.of(context).colorScheme.primary,
                               ),
                               onPressed: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return const Homepage();
-                                }));
+                                if (pbExists == false) {
+                                  insertBeratBadan();
+                                  insertPanjangBadan();
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return const Homepage();
+                                  }));
+                                } else {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return const Homepage();
+                                  }));
+                                }
                               },
                               child: const Text("Mulai"))),
                     ],

@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/sub_menu_stunting/gejala_stunting.dart';
+import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/sub_menu_stunting/klasifikasi_stuntuing.dart';
+import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/sub_menu_stunting/penatalaksanaan_stunting.dart';
+import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/sub_menu_stunting/pencegahan_stunting.dart';
+import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/sub_menu_stunting/pengertian.dart';
+import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/sub_menu_stunting/penyebab_stunting.dart';
+import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/sub_menu_stunting/resiko_stunting.dart';
 
 class PengertianStunting extends StatefulWidget {
   const PengertianStunting({super.key});
@@ -39,10 +46,10 @@ class _PengertianStuntingState extends State<PengertianStunting> {
                         title: Text("Pengertian"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const Pengertian();
+                          }));
                         },
                       ),
                     ),
@@ -59,10 +66,10 @@ class _PengertianStuntingState extends State<PengertianStunting> {
                         title: Text("Klasifikasi"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const KlasifikasiStunting();
+                          }));
                         },
                       ),
                     ),
@@ -79,10 +86,10 @@ class _PengertianStuntingState extends State<PengertianStunting> {
                         title: Text("Penyebab"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const PenyebabStunting();
+                          }));
                         },
                       ),
                     ),
@@ -99,10 +106,10 @@ class _PengertianStuntingState extends State<PengertianStunting> {
                         title: Text("Tanda Gejala"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const GejalaStunting();
+                          }));
                         },
                       ),
                     ),
@@ -119,10 +126,10 @@ class _PengertianStuntingState extends State<PengertianStunting> {
                         title: Text("Risiko"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const ResikoStunting();
+                          }));
                         },
                       ),
                     ),
@@ -139,10 +146,10 @@ class _PengertianStuntingState extends State<PengertianStunting> {
                         title: Text("Pencegahan"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const PencegahanStunting();
+                          }));
                         },
                       ),
                     ),
@@ -159,10 +166,10 @@ class _PengertianStuntingState extends State<PengertianStunting> {
                         title: Text("Penatalaksanaan"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const PenatalaksanaanStunting();
+                          }));
                         },
                       ),
                     ),
