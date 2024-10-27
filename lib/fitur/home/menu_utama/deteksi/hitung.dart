@@ -35,11 +35,13 @@
 double calculateZScore(
     double tbAktual, double tbMedian, double sdNeg1, double sdPos1) {
   if (tbAktual > tbMedian) {
+    print("tinggi");
     return (tbAktual - tbMedian) /
         (sdPos1 - tbMedian); // Z-Score untuk TB Aktual > TB Median
   } else {
+    print("rendah");
     return (tbAktual - tbMedian) /
-        (sdNeg1 - tbMedian); // Z-Score untuk TB Aktual < TB Median
+        (tbMedian - sdNeg1); // Z-Score untuk TB Aktual < TB Median
   }
 }
 

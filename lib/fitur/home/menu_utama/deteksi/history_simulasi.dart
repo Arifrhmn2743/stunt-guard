@@ -56,34 +56,40 @@ class _HistorySimulasiState extends State<HistorySimulasi> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                history["nama"].toString().toUpperCase(),
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text("Umur: ${history['umur']} bulan"),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text('Berat Badan: ${history['bb']} kg'),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text('Tinggi Badan: ${history['tb']} cm'),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text('Kategori: ${history['kategori_bb']}')
-                            ],
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  history["nama"].toString().toUpperCase(),
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text("Umur: ${history['umur']} bulan"),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text('Berat Badan: ${history['bb']} kg'),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text('Tinggi Badan: ${history['tb']} cm'),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Kategori: ${history['kategori_bb']}',
+                                  softWrap: true,
+                                  maxLines: 2,
+                                )
+                              ],
+                            ),
                           ),
                           CircleAvatar(
                             minRadius: 50,
-                            maxRadius: 75,
+                            maxRadius: 50,
                             backgroundImage:
                                 history['jen_kel'].toString() == '0'
                                     ? AssetImage('assets/images/boy.png')
@@ -92,26 +98,6 @@ class _HistorySimulasiState extends State<HistorySimulasi> {
                         ],
                       ),
                     ),
-                    // child: ListTile(
-                    //   title: Text(history["nama"]),
-                    //   subtitle: Column(
-                    //     crossAxisAlignment: CrossAxisAlignment.start,
-                    //     children: [
-                    //       Text("Umur: ${history['umur']} bulan"),
-                    //       Text('Berat Badan: ${history['bb']} kg'),
-                    //       Text('Tinggi Badan: ${history['tb']} cm'),
-                    //       Text('Kategori: ${history['kategori_bb']}')
-                    //     ],
-                    //   ),
-                    //   trailing:
-                    // CircleAvatar(
-                    //     minRadius: 50,
-                    //     maxRadius: 75,
-                    //     backgroundImage: history['jenkel'] == 0
-                    //         ? AssetImage('assets/images/boy.png')
-                    //         : AssetImage('assets/images/girl.png'),
-                    //   ),
-                    // ),
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {

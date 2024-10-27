@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stunting_app/custom_widget/button_bottom.dart';
-import 'package:stunting_app/database/bbb_u_db.dart';
 import 'package:stunting_app/custom_widget/labeled_radio.dart';
 import 'package:stunting_app/database/histori_db.dart';
+import 'package:stunting_app/database/pb_u_db.dart';
 import 'package:stunting_app/fitur/home/menu_utama/deteksi/hasil_deteksi.dart';
 import 'package:stunting_app/fitur/home/menu_utama/deteksi/hitung.dart';
 
@@ -31,10 +31,10 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
 
   Future<void> findBeratBadanForUmur(int umur, double value, int jenKel) async {
     // Ambil data dari database berdasarkan umur dan jenis kelamin
-    DatabaseBBUHelper dbHelper = DatabaseBBUHelper();
+    DatabasePBUHelper dbHelper = DatabasePBUHelper();
 
     // Gunakan await untuk menunggu hasil dari getBeratBadanByUmur
-    var data = await dbHelper.getBeratBadanByUmur(umur, jenKel);
+    var data = await dbHelper.getPanjangByUmur(umur, jenKel);
 
     // Cek jika data tidak null
     if (data != null) {
@@ -49,8 +49,8 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
       // Tampilkan hasilnya
       print('Umur: $umur bulan');
       print('Jenis Kelamin: ${jenKel == 0 ? "Laki-laki" : "Perempuan"}');
-      print('Berat badan: $value kg');
-      print('Nilai median: $median kg');
+      print('tinggi badan: $value cm');
+      print('Nilai median: $median cm');
       // print('Nilai terdekat: $closest kg');
       print('Hasil perhitungan: $zScore');
       print('Hasil kategori: $bbKategori');
@@ -109,38 +109,150 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
           });
     } else {
       if (jenkel == Jenkel.lakiLaki) {
-        await findBeratBadanForUmur(
-            int.parse(umurController.text), double.parse(bbController.text), 0);
-        await history.insertHistory(
-            namaController.text,
-            int.parse(umurController.text),
-            0,
-            ttlController.text,
-            double.parse(bbController.text),
-            double.parse(tbController.text),
-            double.parse(lkController.text),
-            bbKategori!);
+        if (umurController.text == "24") {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text("Tunggu"),
+                  content: Text("Apakah anak diukur dalam keadaan BERDIRI?"),
+                  actions: [
+                    TextButton(
+                      child: Text(
+                        "Ya",
+                        style: const TextStyle(color: Colors.black),
+                      ),
+                      onPressed: () async {
+                        await findBeratBadanForUmur(
+                            241, double.parse(tbController.text), 0);
+                        await history.insertHistory(
+                            namaController.text,
+                            int.parse(umurController.text),
+                            0,
+                            ttlController.text,
+                            double.parse(bbController.text),
+                            double.parse(tbController.text),
+                            double.parse(lkController.text),
+                            bbKategori!);
+                        pindahHalaman();
+                      },
+                    ),
+                    TextButton(
+                      onPressed: () async {
+                        await findBeratBadanForUmur(
+                            int.parse(umurController.text),
+                            double.parse(tbController.text),
+                            0);
+                        await history.insertHistory(
+                            namaController.text,
+                            int.parse(umurController.text),
+                            0,
+                            ttlController.text,
+                            double.parse(bbController.text),
+                            double.parse(tbController.text),
+                            double.parse(lkController.text),
+                            bbKategori!);
+                        pindahHalaman();
+                      },
+                      child: Text(
+                        "Tidak",
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    )
+                  ],
+                );
+              });
+        } else {
+          await findBeratBadanForUmur(int.parse(umurController.text),
+              double.parse(tbController.text), 0);
+          await history.insertHistory(
+              namaController.text,
+              int.parse(umurController.text),
+              1,
+              ttlController.text,
+              double.parse(bbController.text),
+              double.parse(tbController.text),
+              double.parse(lkController.text),
+              bbKategori!);
+          pindahHalaman();
+        }
       } else {
-        await findBeratBadanForUmur(
-            int.parse(umurController.text), double.parse(bbController.text), 1);
-        await history.insertHistory(
-            namaController.text,
-            int.parse(umurController.text),
-            1,
-            ttlController.text,
-            double.parse(bbController.text),
-            double.parse(tbController.text),
-            double.parse(lkController.text),
-            bbKategori!);
+        if (umurController.text == "24") {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text("Tunggu"),
+                  content: Text("Apakah anak diukur dalam keadaan BERDIRI?"),
+                  actions: [
+                    TextButton(
+                      child: Text(
+                        "Ya",
+                        style: const TextStyle(color: Colors.black),
+                      ),
+                      onPressed: () async {
+                        await findBeratBadanForUmur(
+                            241, double.parse(tbController.text), 1);
+                        await history.insertHistory(
+                            namaController.text,
+                            int.parse(umurController.text),
+                            1,
+                            ttlController.text,
+                            double.parse(bbController.text),
+                            double.parse(tbController.text),
+                            double.parse(lkController.text),
+                            bbKategori!);
+                        pindahHalaman();
+                      },
+                    ),
+                    TextButton(
+                        onPressed: () async {
+                          await findBeratBadanForUmur(
+                              int.parse(umurController.text),
+                              double.parse(tbController.text),
+                              1);
+                          await history.insertHistory(
+                              namaController.text,
+                              int.parse(umurController.text),
+                              1,
+                              ttlController.text,
+                              double.parse(bbController.text),
+                              double.parse(tbController.text),
+                              double.parse(lkController.text),
+                              bbKategori!);
+                          pindahHalaman();
+                        },
+                        child:
+                            Text("Tidak", style: TextStyle(color: Colors.red)))
+                  ],
+                );
+              });
+        } else {
+          await findBeratBadanForUmur(int.parse(umurController.text),
+              double.parse(tbController.text), 1);
+          await history.insertHistory(
+              namaController.text,
+              int.parse(umurController.text),
+              1,
+              ttlController.text,
+              double.parse(bbController.text),
+              double.parse(tbController.text),
+              double.parse(lkController.text),
+              bbKategori!);
+          pindahHalaman();
+        }
       }
       // ignore: use_build_context_synchronously
-      Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return HasilDeteksi(
-          nama: namaController.text,
-          kategori: bbKategori!,
-        );
-      }));
     }
+  }
+
+  void pindahHalaman() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return HasilDeteksi(
+        nama: namaController.text,
+        kategori: bbKategori!,
+      );
+    }));
   }
 
   @override

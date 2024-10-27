@@ -80,4 +80,19 @@ class DatabasePBUHelper {
     );
     return result.isNotEmpty;
   }
+
+  Future<Map<String, dynamic>?> getPanjangByUmur(int umur, int jenKel) async {
+    Database db = await database;
+    var result = await db.query(
+      'pbu',
+      where: 'umur = ? AND jen_kel = ?',
+      whereArgs: [umur, jenKel],
+    );
+
+    if (result.isNotEmpty) {
+      return result.first;
+    } else {
+      return null;
+    }
+  }
 }

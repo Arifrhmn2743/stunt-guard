@@ -266,6 +266,17 @@ List<Map<String, dynamic>> panjangBadanList = [
   {
     'umur': 24,
     'jenkel': 0,
+    'sd_neg_3': 78.7,
+    'sd_neg_2': 81.7,
+    'sd_neg_1': 84.8,
+    'median': 87.8,
+    'sd_pos_1': 90.9,
+    'sd_pos_2': 93.9,
+    'sd_pos_3': 97.0
+  },
+  {
+    'umur': 241,
+    'jenkel': 0,
     'sd_neg_3': 78.0,
     'sd_neg_2': 81.0,
     'sd_neg_1': 84.1,
@@ -936,6 +947,17 @@ List<Map<String, dynamic>> panjangBadanList = [
   },
   {
     'umur': 24,
+    'jenkel': 1,
+    'sd_neg_3': 76.7,
+    'sd_neg_2': 80.0,
+    'sd_neg_1': 83.2,
+    'median': 86.4,
+    'sd_pos_1': 89.6,
+    'sd_pos_2': 92.9,
+    'sd_pos_3': 96.1
+  },
+  {
+    'umur': 241,
     'jenkel': 1,
     'sd_neg_3': 76.0,
     'sd_neg_2': 79.3,

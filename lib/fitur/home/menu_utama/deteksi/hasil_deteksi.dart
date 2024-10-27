@@ -23,16 +23,16 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
           children: [
             Center(
               child: SizedBox(
-                child: widget.kategori != "Normal"
-                    ? LottieBuilder.asset(
-                        "assets/images/warning.json",
-                        height: 300,
-                      )
-                    : LottieBuilder.asset(
-                        "assets/images/good_job.json",
-                        height: 300,
-                      ),
-              ),
+                  child:
+                      widget.kategori == "Normal" || widget.kategori == "Tinggi"
+                          ? LottieBuilder.asset(
+                              "assets/images/good_job.json",
+                              height: 300,
+                            )
+                          : LottieBuilder.asset(
+                              "assets/images/warning.json",
+                              height: 300,
+                            )),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -41,9 +41,11 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                 children: [
                   Center(
                     child: Text(
-                      widget.kategori != "Normal"
-                          ? "Peringatan: Anak Terindikasi Stunting"
-                          : "Anak Tidak Terindikasi Stunting",
+                      widget.kategori == "Normal"
+                          ? "Anak Tidak Terindikasi Stunting"
+                          : widget.kategori == 'Tinggi'
+                              ? "Anak terdeteksi Tinggi"
+                              : "Peringatan: Anak Terindikasi Stunting",
                       style: TextStyle(fontSize: 20),
                     ),
                   ),
@@ -51,9 +53,11 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                     height: 30,
                   ),
                   Text(
-                    widget.kategori != "Normal"
-                        ? "Berdasarkan hasil perhitungan, anak Anda terdeteksi memiliki kondisi stunting. Ini berarti pertumbuhan anak berada di bawah standar normal untuk usia dan tinggi badannya."
-                        : "Berdasarkan hasil perhitungan, anak Anda tidak terdeteksi mengalami stunting. Pertumbuhan anak sesuai dengan standar normal untuk usia dan tinggi badannya.",
+                    widget.kategori == "Normal"
+                        ? "Berdasarkan hasil perhitungan, anak Anda tidak terdeteksi mengalami stunting. Pertumbuhan anak sesuai dengan standar normal untuk usia dan tinggi badannya."
+                        : widget.kategori == "Tinggi"
+                            ? "Berdasarkan hasil perhitungan, anak Anda tidak terdeteksi mengalami stunting. Pertumbuhan anak sesuai dengan standar normal untuk usia dan tinggi badannya."
+                            : "Berdasarkan hasil perhitungan, anak Anda terdeteksi memiliki kondisi stunting. Ini berarti pertumbuhan anak berada di bawah standar normal untuk usia dan tinggi badannya.",
                     style: TextStyle(fontSize: 15),
                   ),
                   SizedBox(

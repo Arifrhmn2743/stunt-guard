@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:stunting_app/fitur/home/menu_utama/antropomentri/submenu/cara_pengukuran.dart';
+import 'package:stunting_app/fitur/home/menu_utama/antropomentri/submenu/pengertian_antro.dart';
+import 'package:stunting_app/fitur/home/menu_utama/antropomentri/submenu/tabel_standar.dart';
 
 class Antropometri extends StatefulWidget {
   const Antropometri({super.key});
@@ -36,10 +39,10 @@ class _AntropometriState extends State<Antropometri> {
                         title: Text("Pengertian"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const PengertianAntro();
+                          }));
                         },
                       ),
                     ),
@@ -56,10 +59,10 @@ class _AntropometriState extends State<Antropometri> {
                         title: Text("Cara Pengukuran"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const CaraPengukuran();
+                          }));
                         },
                       ),
                     ),
@@ -76,10 +79,10 @@ class _AntropometriState extends State<Antropometri> {
                         title: Text("Tabel Standar PB/U"),
                         trailing: Icon(Icons.arrow_forward_ios),
                         onTap: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) {
-                          //   return const HistorySimulasi();
-                          // }));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const TabelStandar();
+                          }));
                         },
                       ),
                     ),
