@@ -92,7 +92,7 @@ class _StartScreenState extends State<StartScreen> {
                     child: SizedBox(
                       height: 150,
                       width: MediaQuery.of(context).size.width,
-                      child: Image.asset("assets/images/logo_app.png"),
+                      child: Image.asset("assets/images/ikon_trans.png"),
                     ),
                   ),
                   SizedBox(
@@ -127,7 +127,7 @@ class _StartScreenState extends State<StartScreen> {
                   ),
                   Center(
                     child: Text(
-                      "Dengan bimbingan:",
+                      "Dengan Pembimbing:",
                       style: TextStyle(fontSize: 16),
                     ),
                   ),
@@ -153,8 +153,9 @@ class _StartScreenState extends State<StartScreen> {
                   ),
                   Center(
                     child: Text(
-                      "Universitas Muhammadiyah Purwokerto, Fakultas Ilmu Kesehatan",
+                      "Universitas Muhammadiyah Purwokerto\nFakultas Ilmu Kesehatan",
                       style: TextStyle(fontSize: 16),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   const Spacer(),

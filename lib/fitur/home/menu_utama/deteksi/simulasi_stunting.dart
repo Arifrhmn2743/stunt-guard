@@ -168,7 +168,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
           await history.insertHistory(
               namaController.text,
               int.parse(umurController.text),
-              1,
+              0,
               ttlController.text,
               double.parse(bbController.text),
               double.parse(tbController.text),

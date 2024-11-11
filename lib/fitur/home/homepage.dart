@@ -29,7 +29,7 @@ class _HomepageState extends State<Homepage> {
                 SizedBox(
                   height: 150,
                   width: MediaQuery.of(context).size.width,
-                  child: Image.asset("assets/images/logo_app.png"),
+                  child: Image.asset("assets/images/ikon_trans.png"),
                 ),
                 const SizedBox(
                   height: 50,
