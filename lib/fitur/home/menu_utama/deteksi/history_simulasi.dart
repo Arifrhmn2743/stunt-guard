@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stunting_app/database/histori_db.dart';
+import 'package:stunting_app/fitur/home/menu_utama/deteksi/hasil_deteksi.dart';
 
 class HistorySimulasi extends StatefulWidget {
   const HistorySimulasi({super.key});
@@ -49,53 +50,64 @@ class _HistorySimulasiState extends State<HistorySimulasi> {
                 itemCount: historyList.length,
                 itemBuilder: (context, index) {
                   var history = historyList[index];
-                  print(history["jen_kel"]);
-                  return Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  history["nama"].toString().toUpperCase(),
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text("Umur: ${history['umur']} bulan"),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text('Berat Badan: ${history['bb']} kg'),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text('Tinggi Badan: ${history['tb']} cm'),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  'Kategori: ${history['kategori_bb']}',
-                                  softWrap: true,
-                                  maxLines: 2,
-                                )
-                              ],
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return HasilDeteksi(
+                          nama: history["nama"],
+                          kategori: history['kategori_bb'],
+                        );
+                      }));
+                    },
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    history["nama"].toString().toUpperCase(),
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text("Umur: ${history['umur']} bulan"),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text('Berat Badan: ${history['bb']} kg'),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text('Tinggi Badan: ${history['tb']} cm'),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    'Kategori: ${history['kategori_bb']}',
+                                    softWrap: true,
+                                    maxLines: 2,
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                          CircleAvatar(
-                            minRadius: 50,
-                            maxRadius: 50,
-                            backgroundImage:
-                                history['jen_kel'].toString() == '0'
-                                    ? AssetImage('assets/images/boy.png')
-                                    : AssetImage('assets/images/girl.png'),
-                          ),
-                        ],
+                            CircleAvatar(
+                              minRadius: 50,
+                              maxRadius: 50,
+                              backgroundImage:
+                                  history['jen_kel'].toString() == '0'
+                                      ? AssetImage('assets/images/boy.png')
+                                      : AssetImage('assets/images/girl.png'),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );
