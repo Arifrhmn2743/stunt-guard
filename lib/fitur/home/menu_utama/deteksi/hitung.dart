@@ -47,9 +47,9 @@ double calculateZScore(
 
 String getZScoreCategory(double zScore) {
   if (zScore < -3) {
-    return "Sangat Pendek (Severely Stunted)";
+    return "Terindikasi mengalami kondisi sangat pendek (severly stunted)";
   } else if (zScore >= -3 && zScore < -2) {
-    return "Pendek (Stunted)";
+    return "Terindikasi mengalami kondisi pendek (stunted)";
   } else if (zScore >= -2 && zScore <= 3) {
     return "Normal";
   } else if (zScore > 3) {

@@ -35,14 +35,13 @@ class DatabaseHistory {
         ttl TEXT,
         bb REAL,
         tb REAL,
-        lk REAL,
         kategori_bb TEXT
       )
     ''');
   }
 
   Future<void> insertHistory(String nama, int umur, int jenKel, String ttl,
-      double bb, double tb, double lk, String kategoriBB) async {
+      double bb, double tb, String kategoriBB) async {
     Database db = await database;
     await db.insert('history', {
       'nama': nama,
@@ -51,7 +50,6 @@ class DatabaseHistory {
       'ttl': ttl,
       'bb': bb,
       'tb': tb,
-      'lk': lk,
       'kategori_bb': kategoriBB
     });
   }

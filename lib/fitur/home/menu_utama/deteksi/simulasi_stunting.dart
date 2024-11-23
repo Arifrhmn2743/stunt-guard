@@ -66,8 +66,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
         ttlController.text.isEmpty ||
         umurController.text.isEmpty ||
         bbController.text.isEmpty ||
-        tbController.text.isEmpty ||
-        lkController.text.isEmpty) {
+        tbController.text.isEmpty) {
       showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -132,7 +131,6 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             ttlController.text,
                             double.parse(bbController.text),
                             double.parse(tbController.text),
-                            double.parse(lkController.text),
                             bbKategori!);
                         pindahHalaman();
                       },
@@ -150,7 +148,6 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             ttlController.text,
                             double.parse(bbController.text),
                             double.parse(tbController.text),
-                            double.parse(lkController.text),
                             bbKategori!);
                         pindahHalaman();
                       },
@@ -172,7 +169,6 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
               ttlController.text,
               double.parse(bbController.text),
               double.parse(tbController.text),
-              double.parse(lkController.text),
               bbKategori!);
           pindahHalaman();
         }
@@ -200,7 +196,6 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             ttlController.text,
                             double.parse(bbController.text),
                             double.parse(tbController.text),
-                            double.parse(lkController.text),
                             bbKategori!);
                         pindahHalaman();
                       },
@@ -218,7 +213,6 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                               ttlController.text,
                               double.parse(bbController.text),
                               double.parse(tbController.text),
-                              double.parse(lkController.text),
                               bbKategori!);
                           pindahHalaman();
                         },
@@ -237,7 +231,6 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
               ttlController.text,
               double.parse(bbController.text),
               double.parse(tbController.text),
-              double.parse(lkController.text),
               bbKategori!);
           pindahHalaman();
         }
@@ -465,40 +458,6 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                                 ),
                                 child: TextFormField(
                                   controller: tbController,
-                                  keyboardType: TextInputType.number,
-                                  inputFormatters: [
-                                    LengthLimitingTextInputFormatter(5),
-                                  ],
-                                  decoration: const InputDecoration(
-                                      border: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      errorBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      contentPadding: EdgeInsets.only(
-                                          left: 15,
-                                          bottom: 11,
-                                          top: 11,
-                                          right: 15)),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 15,
-                              ),
-                              const Text(
-                                  "Lingkar Kepala / Lingkar Lengan Anak"),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .secondaryContainer,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: TextFormField(
-                                  controller: lkController,
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
                                     LengthLimitingTextInputFormatter(5),

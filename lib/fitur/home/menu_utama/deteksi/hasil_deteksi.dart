@@ -53,8 +53,10 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                           ? "Anak Anda ${widget.kategori}"
                           : widget.kategori == 'Tinggi'
                               ? "Anak terdeteksi Tinggi"
-                              : "Peringatan: Anak Anda ${widget.kategori}",
-                      style: TextStyle(fontSize: 20),
+                              : "Anak Anda ${widget.kategori}",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   SizedBox(
@@ -186,7 +188,7 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                                           .tertiary),
                                   child: ListTile(
                                     title: Text(
-                                      "Tekan disini untuk melihat rekomendasi cegah stunting dari Kementrian Kesehatan",
+                                      "Pelajari lebih lanjut tentang pencegahan stunting dari Kementerian Kesehatan tahun 2021 – tekan di sini.",
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     trailing: Icon(
