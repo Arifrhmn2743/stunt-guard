@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stunting_app/fitur/home/menu_utama/antropomentri/antropomentri.dart';
 import 'package:stunting_app/fitur/home/menu_utama/deteksi/history_simulasi.dart';
-import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/pengertian_stunting.dart';
+import 'package:stunting_app/fitur/home/menu_utama/deteksi/penatalaksanaan.dart';
 import 'package:stunting_app/fitur/home/menu_utama/deteksi/simulasi_stunting.dart';
+import 'package:stunting_app/fitur/home/menu_utama/pengertian_stunting/pengertian_stunting.dart';
+// import 'package:stunting_app/fitur/home/menu_utama/deteksi/simulasi_stunting.dart';
 import 'package:stunting_app/fitur/home/menu_utama/status_gizi/status_gizi.dart';
 import 'package:stunting_app/fitur/home/menu_utama/tentang/tentang_aplikasi.dart';
 
@@ -100,12 +102,32 @@ class _HomepageState extends State<Homepage> {
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
                       leading: Icon(Icons.calculate),
-                      title: Text("Deteksi & Penatalaksanaan"),
+                      title: Text("Deteksi"),
                       trailing: Icon(Icons.arrow_forward_ios),
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
                           return const SimulasiStunting();
+                        }));
+                      },
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Card(
+                  elevation: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: Icon(Icons.bookmark),
+                      title: Text("Penatalaksanaan"),
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const Penatalaksanaan();
                         }));
                       },
                     ),

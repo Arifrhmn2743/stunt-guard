@@ -73,144 +73,144 @@ class _HasilDeteksiState extends State<HasilDeteksi> {
                   SizedBox(
                     height: 30,
                   ),
-                  Card(
-                    elevation: 2,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                      side: BorderSide(
-                        color: Theme.of(context).colorScheme.tertiary,
-                        width: 2.0,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Center(
-                              child: Text(
-                            "Rekomendasi ahli gizi",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          widget.kategori == "Normal"
-                              ? Text(
-                                  "Wah, Selamat Bu, Hasil pemeriksaan menunjukkan gizi anak baik, Terus pertahankan ya Bu!")
-                              : widget.kategori == "Tinggi"
-                                  ? Text(
-                                      "Wah, Selamat Bu, Hasil pemeriksaan menunjukkan gizi anak baik, Terus pertahankan ya Bu!")
-                                  : Text(
-                                      "Perbanyak asupan protein hewani yang mudah diserap anak-anak atau gampang diolah, Seperti: telur, susu tinggi protein/ susu skim (susu tanpa lemak)/ susu yang sesuai usianya. Tambahan lainnya daging-dagingan (daging ayam, daging sapi)"),
-                          // Text(widget.kategori != "Normal"
-                          //     ? "Pastikan anak mendapatkan asupan gizi yang cukup dan seimbang. "
-                          //     : "Rutin periksakan anak ke tenaga kesehatan untuk memantau perkembangan tinggi dan berat badan."),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          widget.kategori == "Normal"
-                              ? Text(
-                                  "Terimakasih sudah rutin membawa anak ke posyandu Bu!")
-                              : widget.kategori == "Tinggi"
-                                  ? Text(
-                                      "Terimakasih sudah rutin membawa anak ke posyandu Bu!")
-                                  : Text(
-                                      "Segera konsultasikan ke ahli gizi puskesmas terdekat"),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          // Container(
-                          //   decoration: BoxDecoration(
-                          //       border: Border.all(),
-                          //       borderRadius: BorderRadius.circular(20),
-                          //       color: Theme.of(context).colorScheme.tertiary),
-                          //   child: ListTile(
-                          //     title: Text(
-                          //       "Tekan disini untuk melihat info selengkapnya",
-                          //       style: TextStyle(color: Colors.white),
-                          //     ),
-                          //     trailing: Icon(
-                          //       Icons.arrow_forward_ios,
-                          //       color: Colors.white,
-                          //     ),
-                          //     onTap: () {},
-                          //   ),
-                          // ),
-                          // SizedBox(
-                          //   height: 12,
-                          // ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Card(
-                    elevation: 2,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                      side: BorderSide(
-                        color: Theme.of(context).colorScheme.tertiary,
-                        width: 2.0,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Center(
-                              child: Text(
-                            "Anjuran Penatalaksanaan",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Text(widget.kategori == "Normal" ||
-                                  widget.kategori == "Tinggi"
-                              ? "Tetap pertahankan pola makan yang sehat dan bergizi untuk mendukung pertumbuhan anak secara optimal."
-                              : "Konsultasikan segera dengan tenaga kesehatan atau dokter anak untuk mendapatkan penanganan lebih lanjut. "),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          widget.kategori == "Normal" ||
-                                  widget.kategori == "Tinggi"
-                              ? SizedBox.shrink()
-                              : Container(
-                                  decoration: BoxDecoration(
-                                      border: Border.all(),
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .tertiary),
-                                  child: ListTile(
-                                    title: Text(
-                                      "Pelajari lebih lanjut tentang pencegahan stunting dari Kementerian Kesehatan tahun 2021 – tekan di sini.",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    trailing: Icon(
-                                      Icons.arrow_forward_ios,
-                                      color: Colors.white,
-                                    ),
-                                    onTap: () {
-                                      // Navigator.push(context,
-                                      //     MaterialPageRoute(builder: (context) {
-                                      //   return WebviewLink();
-                                      // }));
-                                      _launchUrl();
-                                    },
-                                  ),
-                                ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  // Card(
+                  //   elevation: 2,
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(15.0),
+                  //     side: BorderSide(
+                  //       color: Theme.of(context).colorScheme.tertiary,
+                  //       width: 2.0,
+                  //     ),
+                  //   ),
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.all(16.0),
+                  //     child: Column(
+                  //       crossAxisAlignment: CrossAxisAlignment.start,
+                  //       children: [
+                  //         Center(
+                  //             child: Text(
+                  //           "Rekomendasi ahli gizi",
+                  //           style: TextStyle(fontWeight: FontWeight.bold),
+                  //         )),
+                  //         SizedBox(
+                  //           height: 12,
+                  //         ),
+                  //         widget.kategori == "Normal"
+                  //             ? Text(
+                  //                 "Wah, Selamat Bu, Hasil pemeriksaan menunjukkan gizi anak baik, Terus pertahankan ya Bu!")
+                  //             : widget.kategori == "Tinggi"
+                  //                 ? Text(
+                  //                     "Wah, Selamat Bu, Hasil pemeriksaan menunjukkan gizi anak baik, Terus pertahankan ya Bu!")
+                  //                 : Text(
+                  //                     "Perbanyak asupan protein hewani yang mudah diserap anak-anak atau gampang diolah, Seperti: telur, susu tinggi protein/ susu skim (susu tanpa lemak)/ susu yang sesuai usianya. Tambahan lainnya daging-dagingan (daging ayam, daging sapi)"),
+                  //         // Text(widget.kategori != "Normal"
+                  //         //     ? "Pastikan anak mendapatkan asupan gizi yang cukup dan seimbang. "
+                  //         //     : "Rutin periksakan anak ke tenaga kesehatan untuk memantau perkembangan tinggi dan berat badan."),
+                  //         SizedBox(
+                  //           height: 12,
+                  //         ),
+                  //         widget.kategori == "Normal"
+                  //             ? Text(
+                  //                 "Terimakasih sudah rutin membawa anak ke posyandu Bu!")
+                  //             : widget.kategori == "Tinggi"
+                  //                 ? Text(
+                  //                     "Terimakasih sudah rutin membawa anak ke posyandu Bu!")
+                  //                 : Text(
+                  //                     "Segera konsultasikan ke ahli gizi puskesmas terdekat"),
+                  //         SizedBox(
+                  //           height: 20,
+                  //         ),
+                  //         // Container(
+                  //         //   decoration: BoxDecoration(
+                  //         //       border: Border.all(),
+                  //         //       borderRadius: BorderRadius.circular(20),
+                  //         //       color: Theme.of(context).colorScheme.tertiary),
+                  //         //   child: ListTile(
+                  //         //     title: Text(
+                  //         //       "Tekan disini untuk melihat info selengkapnya",
+                  //         //       style: TextStyle(color: Colors.white),
+                  //         //     ),
+                  //         //     trailing: Icon(
+                  //         //       Icons.arrow_forward_ios,
+                  //         //       color: Colors.white,
+                  //         //     ),
+                  //         //     onTap: () {},
+                  //         //   ),
+                  //         // ),
+                  //         // SizedBox(
+                  //         //   height: 12,
+                  //         // ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+                  // SizedBox(
+                  //   height: 30,
+                  // ),
+                  // Card(
+                  //   elevation: 2,
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(15.0),
+                  //     side: BorderSide(
+                  //       color: Theme.of(context).colorScheme.tertiary,
+                  //       width: 2.0,
+                  //     ),
+                  //   ),
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.all(16.0),
+                  //     child: Column(
+                  //       crossAxisAlignment: CrossAxisAlignment.start,
+                  //       children: [
+                  //         Center(
+                  //             child: Text(
+                  //           "Anjuran Penatalaksanaan",
+                  //           style: TextStyle(fontWeight: FontWeight.bold),
+                  //         )),
+                  //         SizedBox(
+                  //           height: 12,
+                  //         ),
+                  //         Text(widget.kategori == "Normal" ||
+                  //                 widget.kategori == "Tinggi"
+                  //             ? "Tetap pertahankan pola makan yang sehat dan bergizi untuk mendukung pertumbuhan anak secara optimal."
+                  //             : "Konsultasikan segera dengan tenaga kesehatan atau dokter anak untuk mendapatkan penanganan lebih lanjut. "),
+                  //         SizedBox(
+                  //           height: 12,
+                  //         ),
+                  //         widget.kategori == "Normal" ||
+                  //                 widget.kategori == "Tinggi"
+                  //             ? SizedBox.shrink()
+                  //             : Container(
+                  //                 decoration: BoxDecoration(
+                  //                     border: Border.all(),
+                  //                     borderRadius: BorderRadius.circular(20),
+                  //                     color: Theme.of(context)
+                  //                         .colorScheme
+                  //                         .tertiary),
+                  //                 child: ListTile(
+                  //                   title: Text(
+                  //                     "Pelajari lebih lanjut tentang pencegahan stunting dari Kementerian Kesehatan tahun 2021 – tekan di sini.",
+                  //                     style: TextStyle(color: Colors.white),
+                  //                   ),
+                  //                   trailing: Icon(
+                  //                     Icons.arrow_forward_ios,
+                  //                     color: Colors.white,
+                  //                   ),
+                  //                   onTap: () {
+                  //                     // Navigator.push(context,
+                  //                     //     MaterialPageRoute(builder: (context) {
+                  //                     //   return WebviewLink();
+                  //                     // }));
+                  //                     _launchUrl();
+                  //                   },
+                  //                 ),
+                  //               ),
+                  //         SizedBox(
+                  //           height: 12,
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 30,
                   ),

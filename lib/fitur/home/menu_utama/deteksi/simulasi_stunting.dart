@@ -252,7 +252,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Deteksi & Penatalaksanaan"),
+        title: const Text("Deteksi"),
         centerTitle: true,
       ),
       body: Form(
