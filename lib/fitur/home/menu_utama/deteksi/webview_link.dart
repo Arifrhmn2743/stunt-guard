@@ -15,7 +15,6 @@ class _WebviewLinkState extends State<WebviewLink> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)

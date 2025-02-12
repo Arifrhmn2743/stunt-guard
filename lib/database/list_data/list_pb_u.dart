@@ -1364,3 +1364,9 @@ List<Map<String, dynamic>> panjangBadanList = [
     'sd_pos_3': 123.7
   }
 ];
+Map<String, dynamic>? getMedianData(int umur, int jenkel) {
+  return panjangBadanList.firstWhere(
+    (data) => data['umur'] == umur && data['jenkel'] == jenkel,
+    orElse: () => {},
+  );
+}

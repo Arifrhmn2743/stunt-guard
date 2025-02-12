@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 
-class KlasifikasiStunting extends StatefulWidget {
-  const KlasifikasiStunting({super.key});
+class BBUTable extends StatelessWidget {
+  const BBUTable({super.key});
 
-  @override
-  State<KlasifikasiStunting> createState() => _KlasifikasiStuntingState();
-}
-
-class _KlasifikasiStuntingState extends State<KlasifikasiStunting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tabel Status Gizi Anak'),
+        title: Text('Tabel Berat Badan menurut Umur'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
+          scrollDirection: Axis.horizontal,
           child: Table(
             border: TableBorder.all(color: Colors.grey),
             columnWidths: const {
@@ -28,13 +23,16 @@ class _KlasifikasiStuntingState extends State<KlasifikasiStunting> {
             children: [
               // Header row
               TableRow(
-                decoration: BoxDecoration(color: Colors.grey[300]),
+                decoration: BoxDecoration(color: Colors.green[300]),
                 children: const [
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Indeks',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -42,7 +40,10 @@ class _KlasifikasiStuntingState extends State<KlasifikasiStunting> {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Kategori Status Gizi',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -50,7 +51,10 @@ class _KlasifikasiStuntingState extends State<KlasifikasiStunting> {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Ambang Batas Z-Score',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -62,14 +66,14 @@ class _KlasifikasiStuntingState extends State<KlasifikasiStunting> {
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      'Panjang Badan atau Tinggi Badan menurut Umur (PB/U atau TB/U) anak usia 0 - 60 bulan',
+                      'Berat Badan menurut Umur (BB/U) anak usia 0 - 60 bulan',
                       textAlign: TextAlign.center,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      'Sangat pendek (severely stunted)',
+                      'Berat badan sangat kurang (severely underweight)',
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -84,11 +88,11 @@ class _KlasifikasiStuntingState extends State<KlasifikasiStunting> {
               ),
               TableRow(
                 children: const [
-                  SizedBox(), // Leave empty since this data is a continuation
+                  SizedBox(),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      'Pendek (stunted)',
+                      'Berat badan kurang (underweight)',
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -107,14 +111,14 @@ class _KlasifikasiStuntingState extends State<KlasifikasiStunting> {
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      'Normal',
+                      'Berat badan normal',
                       textAlign: TextAlign.center,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      '-2 SD sd +3 SD',
+                      '-2 SD sd +1 SD',
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -126,14 +130,14 @@ class _KlasifikasiStuntingState extends State<KlasifikasiStunting> {
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      'Tinggi',
+                      'Risiko Berat badan lebih',
                       textAlign: TextAlign.center,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      '> +3 SD',
+                      '> +1 SD',
                       textAlign: TextAlign.center,
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:easy_image_viewer/easy_image_viewer.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -108,88 +109,137 @@ class _PenatalaksanaanState extends State<Penatalaksanaan> {
                   },
                   child: Image.asset('assets/images/gizi-sensitif.png')),
               const SizedBox(height: 10),
-              Center(
-                child: Text(
-                  "Sumber",
+              Text(
+                "Sumber",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+              const SizedBox(height: 10),
+              RichText(
+                  text: TextSpan(children: <TextSpan>[
+                TextSpan(
+                    text: "1. Buku Saku Kader Pintar Cegah Stunting. ",
+                    style: const TextStyle(color: Colors.black)),
+                TextSpan(
+                  text: "Tekan disini untuk melihat sumber.",
+                  recognizer: TapGestureRecognizer()..onTap = () => _launchUrl1,
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline,
                     color: Theme.of(context).colorScheme.primary,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                ),
-              ),
+                )
+              ])),
+
+              // Container(
+              //   decoration: BoxDecoration(
+              //       border: Border.all(),
+              //       borderRadius: BorderRadius.circular(20),
+              //       color: Theme.of(context).colorScheme.tertiary),
+              //   child: ListTile(
+              //     title: Text(
+              //       "Pelajari lebih lanjut tentang pencegahan stunting dari Kementerian Kesehatan tahun 2021 – tekan di sini.",
+              //       style: TextStyle(color: Colors.white),
+              //     ),
+              //     trailing: Icon(
+              //       Icons.arrow_forward_ios,
+              //       color: Colors.white,
+              //     ),
+              //     onTap: () {
+              //       // Navigator.push(context,
+              //       //     MaterialPageRoute(builder: (context) {
+              //       //   return WebviewLink();
+              //       // }));
+              //       _launchUrl1();
+              //     },
+              //   ),
+              // ),
               const SizedBox(height: 10),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Theme.of(context).colorScheme.tertiary),
-                child: ListTile(
-                  title: Text(
-                    "Pelajari lebih lanjut tentang pencegahan stunting dari Kementerian Kesehatan tahun 2021 – tekan di sini.",
-                    style: TextStyle(color: Colors.white),
+              RichText(
+                  text: TextSpan(children: <TextSpan>[
+                TextSpan(
+                    text: "2. Peraturan Mentri PPN 1 tahun 2018. ",
+                    style: const TextStyle(color: Colors.black)),
+                TextSpan(
+                  text: "Tekan disini untuk melihat sumber.",
+                  recognizer: TapGestureRecognizer()..onTap = () => _launchUrl2,
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
-                  ),
-                  onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) {
-                    //   return WebviewLink();
-                    // }));
-                    _launchUrl1();
-                  },
-                ),
-              ),
+                )
+              ])),
+              // Container(
+              //   decoration: BoxDecoration(
+              //       border: Border.all(),
+              //       borderRadius: BorderRadius.circular(20),
+              //       color: Theme.of(context).colorScheme.tertiary),
+              //   child: ListTile(
+              //     title: Text(
+              //       "Pelajari lebih lanjut tentang peraturan menteri PPN tahun 2018 – tekan di sini.",
+              //       style: TextStyle(color: Colors.white),
+              //     ),
+              //     trailing: Icon(
+              //       Icons.arrow_forward_ios,
+              //       color: Colors.white,
+              //     ),
+              //     onTap: () {
+              //       // Navigator.push(context,
+              //       //     MaterialPageRoute(builder: (context) {
+              //       //   return WebviewLink();
+              //       // }));
+              //       _launchUrl2();
+              //     },
+              //   ),
+              // ),
               const SizedBox(height: 10),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Theme.of(context).colorScheme.tertiary),
-                child: ListTile(
-                  title: Text(
-                    "Pelajari lebih lanjut tentang peraturan menteri PPN tahun 2018 – tekan di sini.",
-                    style: TextStyle(color: Colors.white),
+              RichText(
+                  text: TextSpan(children: <TextSpan>[
+                TextSpan(
+                    text:
+                        "3. Pedoman Pelaksanaan Intervensi Penurunan Stunting Terintegrasi Di Kabupaten Kota. ",
+                    style: const TextStyle(color: Colors.black)),
+                TextSpan(
+                  text: "Tekan disini untuk melihat sumber.",
+                  recognizer: TapGestureRecognizer()..onTap = () => _launchUrl3,
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
-                  ),
-                  onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) {
-                    //   return WebviewLink();
-                    // }));
-                    _launchUrl2();
-                  },
-                ),
-              ),
-              const SizedBox(height: 10),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Theme.of(context).colorScheme.tertiary),
-                child: ListTile(
-                  title: Text(
-                    "Pelajari lebih lanjut tentang pedoman pelaksanaan intervensi penurunan stunting – tekan di sini.",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
-                  ),
-                  onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) {
-                    //   return WebviewLink();
-                    // }));
-                    _launchUrl3();
-                  },
-                ),
-              ),
+                )
+              ])),
+              // Container(
+              //   decoration: BoxDecoration(
+              //       border: Border.all(),
+              //       borderRadius: BorderRadius.circular(20),
+              //       color: Theme.of(context).colorScheme.tertiary),
+              //   child: ListTile(
+              //     title: Text(
+              //       "Pelajari lebih lanjut tentang pedoman pelaksanaan intervensi penurunan stunting – tekan di sini.",
+              //       style: TextStyle(color: Colors.white),
+              //     ),
+              //     trailing: Icon(
+              //       Icons.arrow_forward_ios,
+              //       color: Colors.white,
+              //     ),
+              //     onTap: () {
+              //       // Navigator.push(context,
+              //       //     MaterialPageRoute(builder: (context) {
+              //       //   return WebviewLink();
+              //       // }));
+              //       _launchUrl3();
+              //     },
+              //   ),
+              // ),
+              const SizedBox(height: 70),
             ],
           ),
         ),

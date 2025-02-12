@@ -1,5 +1,7 @@
+import 'package:datetime_picker_formfield_new/datetime_picker_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 import 'package:stunting_app/custom_widget/button_bottom.dart';
 import 'package:stunting_app/custom_widget/labeled_radio.dart';
 import 'package:stunting_app/database/histori_db.dart';
@@ -28,6 +30,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
   var lkController = TextEditingController();
 
   String? bbKategori;
+  final dateformat = DateFormat("dd-MM-yyyy");
 
   Future<void> findBeratBadanForUmur(int umur, double value, int jenKel) async {
     // Ambil data dari database berdasarkan umur dan jenis kelamin
@@ -129,10 +132,14 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             int.parse(umurController.text),
                             0,
                             ttlController.text,
+                            dateformat.format(DateTime.now()),
                             double.parse(bbController.text),
                             double.parse(tbController.text),
                             bbKategori!);
-                        pindahHalaman();
+                        if (context.mounted) {
+                          Navigator.pop(context);
+                          pindahHalaman(0, 241, int.parse(tbController.text));
+                        }
                       },
                     ),
                     TextButton(
@@ -146,10 +153,15 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             int.parse(umurController.text),
                             0,
                             ttlController.text,
+                            dateformat.format(DateTime.now()),
                             double.parse(bbController.text),
                             double.parse(tbController.text),
                             bbKategori!);
-                        pindahHalaman();
+                        if (context.mounted) {
+                          Navigator.pop(context);
+                          pindahHalaman(0, int.parse(umurController.text),
+                              int.parse(tbController.text));
+                        }
                       },
                       child: Text(
                         "Tidak",
@@ -167,10 +179,12 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
               int.parse(umurController.text),
               0,
               ttlController.text,
+              dateformat.format(DateTime.now()),
               double.parse(bbController.text),
               double.parse(tbController.text),
               bbKategori!);
-          pindahHalaman();
+          pindahHalaman(
+              0, int.parse(umurController.text), int.parse(tbController.text));
         }
       } else {
         if (umurController.text == "24") {
@@ -194,10 +208,14 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             int.parse(umurController.text),
                             1,
                             ttlController.text,
+                            dateformat.format(DateTime.now()),
                             double.parse(bbController.text),
                             double.parse(tbController.text),
                             bbKategori!);
-                        pindahHalaman();
+                        if (context.mounted) {
+                          Navigator.pop(context);
+                          pindahHalaman(1, 241, int.parse(tbController.text));
+                        }
                       },
                     ),
                     TextButton(
@@ -211,10 +229,15 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                               int.parse(umurController.text),
                               1,
                               ttlController.text,
+                              dateformat.format(DateTime.now()),
                               double.parse(bbController.text),
                               double.parse(tbController.text),
                               bbKategori!);
-                          pindahHalaman();
+                          if (context.mounted) {
+                            Navigator.pop(context);
+                            pindahHalaman(1, int.parse(umurController.text),
+                                int.parse(tbController.text));
+                          }
                         },
                         child:
                             Text("Tidak", style: TextStyle(color: Colors.red)))
@@ -229,21 +252,26 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
               int.parse(umurController.text),
               1,
               ttlController.text,
+              dateformat.format(DateTime.now()),
               double.parse(bbController.text),
               double.parse(tbController.text),
               bbKategori!);
-          pindahHalaman();
+          pindahHalaman(
+              1, int.parse(umurController.text), int.parse(tbController.text));
         }
       }
       // ignore: use_build_context_synchronously
     }
   }
 
-  void pindahHalaman() {
+  void pindahHalaman(int jenKel, int umur, int tinggiBadan) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return HasilDeteksi(
-        nama: namaController.text,
         kategori: bbKategori!,
+        isFromHistory: false,
+        jenisKelamin: jenKel,
+        umur: umur,
+        tinggiBadan: tinggiBadan,
       );
     }));
   }
@@ -272,6 +300,11 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text("Masukkan Data Anak"),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              Text(
+                                  "Tanggal Deteksi: ${dateformat.format(DateTime.now())}"),
                               const SizedBox(
                                 height: 30,
                               ),
@@ -304,7 +337,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                               const SizedBox(
                                 height: 15,
                               ),
-                              const Text("Tempat, Tanggal Lahir Anak"),
+                              const Text("Tanggal Lahir Anak"),
                               const SizedBox(
                                 height: 5,
                               ),
@@ -315,19 +348,34 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                                       .secondaryContainer,
                                   borderRadius: BorderRadius.circular(15),
                                 ),
-                                child: TextFormField(
+                                child: DateTimeField(
                                   controller: ttlController,
+                                  format: dateformat,
+                                  onShowPicker: (context, currentValue) {
+                                    return showDatePicker(
+                                        context: context,
+                                        firstDate: DateTime(1990),
+                                        initialDate:
+                                            currentValue ?? DateTime.now(),
+                                        lastDate: DateTime.now());
+                                  },
                                   decoration: const InputDecoration(
-                                      border: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      errorBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      contentPadding: EdgeInsets.only(
-                                          left: 15,
-                                          bottom: 11,
-                                          top: 11,
-                                          right: 15)),
+                                    border: InputBorder.none,
+                                    focusedBorder: InputBorder.none,
+                                    enabledBorder: InputBorder.none,
+                                    errorBorder: InputBorder.none,
+                                    disabledBorder: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        left: 15,
+                                        bottom: 11,
+                                        top: 11,
+                                        right: 15),
+                                  ),
+                                  onChanged: (value) {
+                                    ttlController.text =
+                                        dateformat.format(value!);
+                                    setState(() {});
+                                  },
                                 ),
                               ),
                               const SizedBox(
