@@ -79,7 +79,7 @@ class _ResikoStuntingState extends State<ResikoStunting> {
               ),
               const SizedBox(height: 8),
               const Text(
-                "Stunting menyebabkan menurunnya kapasitas intelektual. Selain itu, kekurangan gizi juga menyebabkan gangguan pertumbuhan (pendek dan atau kurus) dan meningkatkan risiko penyakit tidak menular seperti diabetes melitus, hipertensi, jantung kroner, dan stroke",
+                "Stunting menyebabkan menurunnya kapasitas intelektual. Selain itu, kekurangan gizi juga menyebabkan gangguan pertumbuhan (pendek dan atau kurus) dan meningkatkan risiko penyakit tidak menular seperti diabetes mellitus, hipertensi, jantung kroner, dan stroke",
                 style: TextStyle(fontSize: 16, color: Colors.black87),
                 textAlign: TextAlign.justify,
               ),

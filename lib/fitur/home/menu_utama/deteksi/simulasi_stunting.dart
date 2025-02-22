@@ -443,6 +443,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
                                     LengthLimitingTextInputFormatter(2),
+                                    FilteringTextInputFormatter.digitsOnly
                                   ],
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,
@@ -475,7 +476,8 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                                   controller: bbController,
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
-                                    LengthLimitingTextInputFormatter(5),
+                                    LengthLimitingTextInputFormatter(3),
+                                    FilteringTextInputFormatter.digitsOnly
                                   ],
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,
@@ -508,7 +510,8 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                                   controller: tbController,
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
-                                    LengthLimitingTextInputFormatter(5),
+                                    LengthLimitingTextInputFormatter(3),
+                                    FilteringTextInputFormatter.digitsOnly
                                   ],
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,

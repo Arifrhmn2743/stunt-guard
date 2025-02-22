@@ -125,7 +125,10 @@ class _PenatalaksanaanState extends State<Penatalaksanaan> {
                     style: const TextStyle(color: Colors.black)),
                 TextSpan(
                   text: "Tekan disini untuk melihat sumber.",
-                  recognizer: TapGestureRecognizer()..onTap = () => _launchUrl1,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () async {
+                      await _launchUrl1();
+                    },
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: Theme.of(context).colorScheme.primary,
@@ -134,30 +137,6 @@ class _PenatalaksanaanState extends State<Penatalaksanaan> {
                   ),
                 )
               ])),
-
-              // Container(
-              //   decoration: BoxDecoration(
-              //       border: Border.all(),
-              //       borderRadius: BorderRadius.circular(20),
-              //       color: Theme.of(context).colorScheme.tertiary),
-              //   child: ListTile(
-              //     title: Text(
-              //       "Pelajari lebih lanjut tentang pencegahan stunting dari Kementerian Kesehatan tahun 2021 – tekan di sini.",
-              //       style: TextStyle(color: Colors.white),
-              //     ),
-              //     trailing: Icon(
-              //       Icons.arrow_forward_ios,
-              //       color: Colors.white,
-              //     ),
-              //     onTap: () {
-              //       // Navigator.push(context,
-              //       //     MaterialPageRoute(builder: (context) {
-              //       //   return WebviewLink();
-              //       // }));
-              //       _launchUrl1();
-              //     },
-              //   ),
-              // ),
               const SizedBox(height: 10),
               RichText(
                   text: TextSpan(children: <TextSpan>[
@@ -166,7 +145,10 @@ class _PenatalaksanaanState extends State<Penatalaksanaan> {
                     style: const TextStyle(color: Colors.black)),
                 TextSpan(
                   text: "Tekan disini untuk melihat sumber.",
-                  recognizer: TapGestureRecognizer()..onTap = () => _launchUrl2,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () async {
+                      await _launchUrl2();
+                    },
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: Theme.of(context).colorScheme.primary,
@@ -175,29 +157,6 @@ class _PenatalaksanaanState extends State<Penatalaksanaan> {
                   ),
                 )
               ])),
-              // Container(
-              //   decoration: BoxDecoration(
-              //       border: Border.all(),
-              //       borderRadius: BorderRadius.circular(20),
-              //       color: Theme.of(context).colorScheme.tertiary),
-              //   child: ListTile(
-              //     title: Text(
-              //       "Pelajari lebih lanjut tentang peraturan menteri PPN tahun 2018 – tekan di sini.",
-              //       style: TextStyle(color: Colors.white),
-              //     ),
-              //     trailing: Icon(
-              //       Icons.arrow_forward_ios,
-              //       color: Colors.white,
-              //     ),
-              //     onTap: () {
-              //       // Navigator.push(context,
-              //       //     MaterialPageRoute(builder: (context) {
-              //       //   return WebviewLink();
-              //       // }));
-              //       _launchUrl2();
-              //     },
-              //   ),
-              // ),
               const SizedBox(height: 10),
               RichText(
                   text: TextSpan(children: <TextSpan>[
@@ -207,7 +166,10 @@ class _PenatalaksanaanState extends State<Penatalaksanaan> {
                     style: const TextStyle(color: Colors.black)),
                 TextSpan(
                   text: "Tekan disini untuk melihat sumber.",
-                  recognizer: TapGestureRecognizer()..onTap = () => _launchUrl3,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () async {
+                      await _launchUrl3();
+                    },
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: Theme.of(context).colorScheme.primary,
@@ -216,29 +178,6 @@ class _PenatalaksanaanState extends State<Penatalaksanaan> {
                   ),
                 )
               ])),
-              // Container(
-              //   decoration: BoxDecoration(
-              //       border: Border.all(),
-              //       borderRadius: BorderRadius.circular(20),
-              //       color: Theme.of(context).colorScheme.tertiary),
-              //   child: ListTile(
-              //     title: Text(
-              //       "Pelajari lebih lanjut tentang pedoman pelaksanaan intervensi penurunan stunting – tekan di sini.",
-              //       style: TextStyle(color: Colors.white),
-              //     ),
-              //     trailing: Icon(
-              //       Icons.arrow_forward_ios,
-              //       color: Colors.white,
-              //     ),
-              //     onTap: () {
-              //       // Navigator.push(context,
-              //       //     MaterialPageRoute(builder: (context) {
-              //       //   return WebviewLink();
-              //       // }));
-              //       _launchUrl3();
-              //     },
-              //   ),
-              // ),
               const SizedBox(height: 70),
             ],
           ),
