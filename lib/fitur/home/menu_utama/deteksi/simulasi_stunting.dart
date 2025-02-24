@@ -138,7 +138,8 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             bbKategori!);
                         if (context.mounted) {
                           Navigator.pop(context);
-                          pindahHalaman(0, 241, int.parse(tbController.text));
+                          pindahHalaman(
+                              0, 241, double.parse(tbController.text));
                         }
                       },
                     ),
@@ -160,7 +161,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                         if (context.mounted) {
                           Navigator.pop(context);
                           pindahHalaman(0, int.parse(umurController.text),
-                              int.parse(tbController.text));
+                              double.parse(tbController.text));
                         }
                       },
                       child: Text(
@@ -183,8 +184,8 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
               double.parse(bbController.text),
               double.parse(tbController.text),
               bbKategori!);
-          pindahHalaman(
-              0, int.parse(umurController.text), int.parse(tbController.text));
+          pindahHalaman(0, int.parse(umurController.text),
+              double.parse(tbController.text));
         }
       } else {
         if (umurController.text == "24") {
@@ -214,7 +215,8 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                             bbKategori!);
                         if (context.mounted) {
                           Navigator.pop(context);
-                          pindahHalaman(1, 241, int.parse(tbController.text));
+                          pindahHalaman(
+                              1, 241, double.parse(tbController.text));
                         }
                       },
                     ),
@@ -236,7 +238,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                           if (context.mounted) {
                             Navigator.pop(context);
                             pindahHalaman(1, int.parse(umurController.text),
-                                int.parse(tbController.text));
+                                double.parse(tbController.text));
                           }
                         },
                         child:
@@ -256,15 +258,15 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
               double.parse(bbController.text),
               double.parse(tbController.text),
               bbKategori!);
-          pindahHalaman(
-              1, int.parse(umurController.text), int.parse(tbController.text));
+          pindahHalaman(1, int.parse(umurController.text),
+              double.parse(tbController.text));
         }
       }
       // ignore: use_build_context_synchronously
     }
   }
 
-  void pindahHalaman(int jenKel, int umur, int tinggiBadan) {
+  void pindahHalaman(int jenKel, int umur, double tinggiBadan) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return HasilDeteksi(
         kategori: bbKategori!,
@@ -443,7 +445,7 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
                                     LengthLimitingTextInputFormatter(2),
-                                    FilteringTextInputFormatter.digitsOnly
+                                    // FilteringTextInputFormatter.digitsOnly
                                   ],
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,
@@ -476,8 +478,8 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                                   controller: bbController,
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
-                                    LengthLimitingTextInputFormatter(3),
-                                    FilteringTextInputFormatter.digitsOnly
+                                    LengthLimitingTextInputFormatter(5),
+                                    // FilteringTextInputFormatter.digitsOnly
                                   ],
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,
@@ -510,8 +512,8 @@ class _SimulasiStuntingState extends State<SimulasiStunting> {
                                   controller: tbController,
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
-                                    LengthLimitingTextInputFormatter(3),
-                                    FilteringTextInputFormatter.digitsOnly
+                                    LengthLimitingTextInputFormatter(5),
+                                    // FilteringTextInputFormatter.digitsOnly
                                   ],
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,

@@ -9,7 +9,8 @@ class HasilDeteksi extends StatefulWidget {
   final bool isFromHistory;
   final String kategori;
   final int jenisKelamin, umur;
-  final int? id, tinggiBadan;
+  final int? id;
+  final double? tinggiBadan;
   const HasilDeteksi(
       {super.key,
       required this.kategori,
