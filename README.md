@@ -1,16 +1,31 @@
-# stunting_app
 
-A new Flutter project.
+# APEDIS-mobile
 
-## Getting Started
+APEDIS (Aplikasi Deteksi Dini Stunting dan Screening pada Balita) adalah aplkasi mobile berbasis android yang dipakai untuk memenuhi kebutuhan skripsi mahasiswa Universitas Muhammadiyah Purwokerto, Fakultas Ilmu Kesehatan.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Fitur
+
+- Informasi seputar gizi anak
+- Simulasi hitung skor Z-score anak
+- Cross platform (Berjalan lancar di handphone android, dan di emulator iOS)
+
+
+## Installasi
+
+Install Flutter di laptop anda. Versi Flutter yang dipakai pada proses pembuatan aplikasi ini adalah versi [Stable 3.24.2](https://docs.flutter.dev/release/archive). Untuk cara install flutter silahkan bisa dibaca melalui [link ini](https://docs.flutter.dev/get-started/install).
+
+Setelah Flutter terinstall, buka kode editor [Vscode](https://code.visualstudio.com/), dan pada menu terminal>new terminal, ketikkan
+
+```bash
+  flutter clean
+  flutter pub get
+  flutter run
+```
+Untuk membuat file APK nya, ketikkan di terminal
+
+```bash
+  flutter build apk
+```
